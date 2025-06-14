@@ -1,0 +1,72 @@
+// Sample JavaScript Code
+
+// 1. Function Declaration
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+// 2. Arrow Function (ES6)
+const addNumbers = (a, b) => a + b;
+
+// 3. Object with Methods
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30,
+  fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+};
+
+// 4. Array Operations
+const fruits = ['apple', 'banana', 'orange'];
+fruits.push('grape'); // Add to end
+const firstFruit = fruits[0]; // Access first element
+
+// 5. Class (ES6)
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+  
+  get area() {
+    return this.width * this.height;
+  }
+}
+
+// 6. Using Promises for Async Operations
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Data received');
+    }, 1000);
+  });
+}
+
+// 7. Event Listener
+document.getElementById('myButton')?.addEventListener('click', () => {
+  console.log('Button clicked!');
+});
+
+// Usage Examples
+console.log(greet('Alice')); // Hello, Alice!
+console.log(addNumbers(5, 3)); // 8
+console.log(person.fullName()); // John Doe
+
+const rect = new Rectangle(5, 8);
+console.log(rect.area); // 40
+
+fetchData()
+  .then(data => console.log(data)) // Data received
+  .catch(err => console.error(err));
+
+// 8. Array Methods (map, filter, reduce)
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(n => n * 2);
+const evens = numbers.filter(n => n % 2 === 0);
+const sum = numbers.reduce((acc, n) => acc + n, 0);
+
+console.log(doubled); // [2, 4, 6, 8, 10]
+console.log(evens); // [2, 4]
+console.log(sum); // 15
